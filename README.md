@@ -2,10 +2,11 @@
 Upload any files to any cloud remotely using heroku
 Work not yet started .....
 
-work may be similar to https://github.com/developeranaz/URL-TO-MEGA-HEROKU
+work may be similar to 
+[!g](https://github.com/developeranaz/URL-TO-MEGA-HEROKU)
 
 Aria 2 Rclone Clouds
 
 code cleaning locally
 
-Rclone Fusemode or Public Url method 
+Rclone Fusemode / Public Url method 
