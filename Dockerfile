@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk -U upgrade -y  && \
+RUN apk update -y  && \
     apk add curl -y  && \
     apk add unrar -y  && \
     apk add unzip -y  && \
