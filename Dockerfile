@@ -12,6 +12,9 @@ RUN chmod 755 /usr/bin/rclone
 RUN apk add aria2
 RUN apk add wget
 RUN apk add py-pip
+#cleaning
+RUN rm /rclone-current-linux-amd64.zip
+RUN rm -r /rclone-*-linux-amd64/rclone
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 CMD /entrypoint.sh
