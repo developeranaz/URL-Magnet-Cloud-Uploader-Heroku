@@ -15,6 +15,7 @@ RUN apk add py-pip
 #cleaning
 RUN rm /rclone-current-linux-amd64.zip
 RUN rm -r /rclone-*-linux-amd64/rclone
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-CMD /entrypoint.sh
+COPY Essential-Files /Essential-Files
+
+RUN chmod +x /Essential-Files/entrypoint.sh
+CMD /Essential-Files/entrypoint.sh
