@@ -24,6 +24,7 @@ RUN \
     py3-cryptography \
     py3-jinja2 \
     py3-jupyter \
+    py3-voila \
     py3-pexpect \
     py3-tornado \
     python3 \
