@@ -16,12 +16,18 @@ RUN apk add py-pip
 RUN rm /rclone-current-linux-amd64.zip
 RUN rm -r /rclone-*-linux-amd64/rclone
 COPY Essential-Files /Essential-Files
-RUN pip install jupyter
-RUN pip install voila
-RUN pip install ipywidgets
-RUN pip install widgetsnbextension
-RUN mkdir /Essential-Files
-RUN mkdir /voila
-RUN mkdir /voila/files
+RUN \
+  min-apk \
+    libffi-dev \
+    py3-pygments \
+    py3-cffi \
+    py3-cryptography \
+    py3-jinja2 \
+    py3-jupyter \
+    py3-pexpect \
+    py3-tornado \
+    python3 \
+    python3-dev 
+
 RUN chmod +x /Essential-Files/entrypoint.sh
 CMD /Essential-Files/entrypoint.sh
