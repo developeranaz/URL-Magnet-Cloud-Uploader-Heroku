@@ -11,24 +11,17 @@ RUN chown root:root /usr/bin/rclone
 RUN chmod 755 /usr/bin/rclone
 RUN apk add aria2
 RUN apk add wget
-RUN apk add py-pip
+RUN apk add py3-pip
 #Cleaning&Finalising
 RUN rm /rclone-current-linux-amd64.zip
 RUN rm -r /rclone-*-linux-amd64/rclone
 COPY Essential-Files /Essential-Files
-RUN \
-  min-apk \
-    libffi-dev \
-    py3-pygments \
-    py3-cffi \
-    py3-cryptography \
-    py3-jinja2 \
-    py3-jupyter \
-    py3-voila \
-    py3-pexpect \
-    py3-tornado \
-    python3 \
-    python3-dev 
-
+RUN py3-jupyter
+RUN py install voila
+RUN pip install ipywidgets
+RUN pip install widgetsnbextension
+RUN mkdir /Essential-Files
+RUN mkdir /voila
+RUN mkdir /voila/files
 RUN chmod +x /Essential-Files/entrypoint.sh
 CMD /Essential-Files/entrypoint.sh
