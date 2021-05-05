@@ -1,0 +1,6 @@
+#!/bin/bash
+
+exec jupyter notebook \
+	--JupyterApp.token='' \
+	--JupyterApp.password='' \
+	--allow-root

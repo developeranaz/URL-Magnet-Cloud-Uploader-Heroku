@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+mkdir -p min-package
+cd min-package
+curl -L $1 > package.tar.gz
+tar -xzf package.tar.gz
+rm package.tar.gz
+
+cd $(ls)
+
+if [ $# -eq 2 ]; then
+  eval "$2"
+else
+  ./configure && make && make install
+fi
+
+cd ../../
+rm -rf min-package
+
+strip --strip-unneeded --strip-debug /usr/local/lib/*.a || true
+strip --strip-unneeded --strip-debug /usr/local/lib/*.so* || true
