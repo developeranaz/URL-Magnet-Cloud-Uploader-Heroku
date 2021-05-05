@@ -14,7 +14,7 @@ RUN chown root:root /usr/bin/rclone
 RUN chmod 755 /usr/bin/rclone
 RUN apk add aria2
 RUN apk add wget
-RUN apk add py3-pip
+#RUN apk add py3-pip
 RUN pip install jupyter
 RUN pip install voila
 RUN pip install ipywidgets
