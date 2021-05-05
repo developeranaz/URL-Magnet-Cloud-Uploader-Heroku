@@ -1,6 +1,9 @@
 FROM alpine:latest
 
 RUN apk update
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools
 RUN apk add curl
 RUN apk add unrar
 RUN apk add unzip
