@@ -26,10 +26,11 @@ Heroku oneclick / Rapid deploy method available
 * After Deploying open the webapp.
 
 #### Step 2
-
 * Paste your Direct / Magnet URL in the url section
+
 #### Step 3 (threads per download)
 * Set it maximum to increase speed upto 12 threads
+
 #### Step 4 (config in url)
 * Generate rclone.conf file from any terminal or cmd or termux 
 * You can use Multiple cloud drive accounts in single rclone.conf file
@@ -39,6 +40,7 @@ Heroku oneclick / Rapid deploy method available
 * Then Click RAW button and copy the url
 * Paste the Url in the heroku webapp 'config in Url' Section
 ** note : Don't share this url to anyone
+
 #### Step 5 (Cloudname)
 * Cloudname is the name that you assigned to your cloud
 * You can find it in rclone.conf file ,it must be between [ ]
