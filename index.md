@@ -1,37 +1,80 @@
-## Welcome to GitHub Pages
+# URL-TO-RCLONE-HEROKU-ARIA2
 
-You can use the [editor on GitHub](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![Aria2Rclone](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/1620300999496.jpg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ Still under development
 
-### Markdown
+Aria2c download url & magnet upload remotely to rclone Clouds.
+upload files remotely from url
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Help me fixing readme.md 
 
-```markdown
-Syntax highlighted code block
+Heroku oneclick / Rapid deploy method available
 
-# Header 1
-## Header 2
-### Header 3
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
 
-- Bulleted
-- List
+###### Star my Repository & Support me
 
-1. Numbered
-2. List
+## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
-**Bold** and _Italic_ and `Code` text
+## How To Use ?
+#### Step 1
+* Create a Heroku Free account
+* Log in to Heroku in any browser
+* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
+* Deploy the webapp it will take almost 5min.
+* After Deploying open the webapp.
 
-[Link](url) and ![Image](src)
-```
+#### Step 2
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* Paste your Direct / Magnet URL in the url section
+#### Step 3 (threads per download)
+* Set it maximum to increase speed upto 12 threads
+#### Step 4 (config in url)
+* Generate rclone.conf file from any terminal or cmd or termux 
+* You can use Multiple cloud drive accounts in single rclone.conf file
+* We need any text/code hosting website, Use [gist-github](https://gist.github.com) github account needed.
+* Open rclone.config file using any text editors and copy all text inside rclone.conf and paste it in gist
+* Choose any file name and save it.
+* Then Click RAW button and copy the url
+* Paste the Url in the heroku webapp 'config in Url' Section
+** note : Don't share this url to anyone
+#### Step 5 (Cloudname)
+* Cloudname is the name that you assigned to your cloud
+* You can find it in rclone.conf file ,it must be between [ ]
+![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)
+* Please type CLOUDNAME without brackets in heroku webapp
+#### Step 6 (Upload)
+* Click on upload button to start download and upload 
 
-### Jekyll Themes
+# Features 
+ * Multi threat download upto x12
+ * Upload & Download at Maximum Speed
+ * Premitive Classic web design
+ * Darkmod Enabled
+ * No such upload limit
+ * No heroku Bans like Aria2ng-heroku.
+ * Safe and secure
+ * Downloads High seeded torrents.
+# Known issues
+ * Torrent File upload not available
+ * magnet / torrent may not upload automatically
+ * magnet links stucks at seeding after downloaded.
+ * For Personal use only ie., 1 user per 1 download at a time.
+ * Low seeded Torrents may take long time,It affects free dyno.
+###### Use [seedr.cc](https://seedr.cc) to upload torrents if number of seeds is low/low speed, and upload directlink to Aria2Rclone.
+# screenshots
+![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506-153704.jpg)
+![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181154.jpg)
+![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181606.jpg)
+![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181256.jpg)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+This repo is under development
 
-### Support or Contact
+# What's New
+* Improved UI
+* Torrent supports but no auto uploads
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
+
+
