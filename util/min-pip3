@@ -1,7 +1,0 @@
-#!/bin/bash -e
-
-pip3 install --no-cache-dir $@
-
-rm -rf /usr/lib/python3*/site-packages/*/test{,s}
-rm -rf /usr/lib/python3*/site-packages/*/*/test{,s}
-rm -rf /usr/lib/python3*/site-packages/*/*/*/test{,s}

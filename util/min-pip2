@@ -1,7 +1,0 @@
-#!/bin/bash -e
-
-pip2 install --no-cache-dir $@
-
-rm -rf /usr/lib/python2*/site-packages/*/test{,s}
-rm -rf /usr/lib/python2*/site-packages/*/*/test{,s}
-rm -rf /usr/lib/python2*/site-packages/*/*/*/test{,s}

@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# The important terminfo files are installed by ncurses-terminfo-base into
-# /etc/terminfo.  The ncurses-terminfo package creates symlinks to those
-# files in /usr/share/terminfo.  Everything else that ncurses-terminfo
-# installs in /usr/share/terminfo is a regular file we don't care about.
-
-find /usr/share/terminfo -type f -delete
