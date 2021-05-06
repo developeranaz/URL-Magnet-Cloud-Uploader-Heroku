@@ -27,7 +27,7 @@ Heroku oneclick / Rapid deploy method available
 * Paste your Direct / Magnet URL in the url section
 ### Step 3
 * Generate rclone.conf file from any terminal or cmd or termux
-* We need any text hosting website Use gist.github.io
+* We need any text hosting website Use [gist-github](https://gist.github.com)
 
 # Features 
  * Multi threat download upto x12
