@@ -87,7 +87,7 @@
     "#)\n",
     "\n",
     "link01 = widgets.HTML(\n",
-    "    value=\"<font color='lime'><center><h6>DONATE BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c <br> Developed by <a href=https://github.com/developeranaz target='_blank'>developeranaz </a> <br><a href=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU target='_blank'>Trouble Uploading ? Readme </a><br><a href=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues target='_blank'>Issues can be reported here </a>\",\n",
+    "    value=\"<font color='lime'><center><h6>DONATE BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c <br><a href=https://github.com/developeranaz target='_blank'>DEVELOPERANAZ </a> <br><a href=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU target='_blank'>Trouble Uploading ? Readme </a><br><a href=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues target='_blank'>Issues can be reported here </a>\",\n",
     ")\n",
     "\n",
     "\n",
