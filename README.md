@@ -15,9 +15,19 @@ Heroku oneclick / Rapid deploy method available
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
 # How To Use ?
+### Step 1
 * Create a Heroku Free account
 * Log in to Heroku in any browser
 * Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
+* Deploy the webapp it will take almost 5min.
+* After Deploying open the webapp.
+
+### Step 2
+
+* Paste your Direct / Magnet URL in the url section
+### Step 3
+* Generate rclone.conf file from any terminal or cmd or termux
+* We need any text hosting website Use gist.github.io
 
 # Features 
  * Multi threat download upto x12
