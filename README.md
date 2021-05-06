@@ -62,8 +62,9 @@ Heroku oneclick / Rapid deploy method available
  * 1 user per 1 download at a time
 # screenshots
 ![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506-153704.jpg)
-![demo0](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_005030.jpg)
-![demo1](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_010117_com.brave.browser.jpg)
+![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181154.jpg)
+![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181606.jpg)
+![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181256.jpg)
 
 This repo is under development
 
