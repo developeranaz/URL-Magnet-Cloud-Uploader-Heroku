@@ -19,7 +19,7 @@ Heroku oneclick / Rapid deploy method available
 
 ## How To Use ?
 
-#### Step 1
+#### Step 1 
 
 * Create a Heroku Free account
 * Log in to Heroku in any browser
@@ -27,15 +27,15 @@ Heroku oneclick / Rapid deploy method available
 * Deploy the webapp it will take almost 5min.
 * After Deploying open the webapp.
 
-#### Step 2
+#### Step 2 
 
 * Paste your Direct / Magnet URL in the url section
 
-#### Step 3 (threads per download)
+#### Step 3 (threads per download) 
 
 * Set it maximum to increase speed upto 12 threads
 
-#### Step 4 (config in url)
+#### Step 4 (config in url) 
 
 * Generate rclone.conf file from any terminal or cmd or termux 
 * You can use Multiple cloud drive accounts in single rclone.conf file
@@ -46,14 +46,14 @@ Heroku oneclick / Rapid deploy method available
 * Paste the Url in the heroku webapp 'config in Url' Section
 ** note : Don't share this url to anyone
 
-#### Step 5 (Cloudname)
+#### Step 5 (Cloudname) 
 
 * Cloudname is the name that you assigned to your cloud
 * You can find it in rclone.conf file ,it must be between [ ]
 ![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)
 * Please type CLOUDNAME without brackets in heroku webapp
 
-#### Step 6 (Upload)
+#### Step 6 (Upload) 
 
 * Click on upload button to start download and upload 
 
