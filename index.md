@@ -18,7 +18,9 @@ Heroku oneclick / Rapid deploy method available
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
 ## How To Use ?
+
 #### Step 1
+
 * Create a Heroku Free account
 * Log in to Heroku in any browser
 * Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
@@ -26,12 +28,15 @@ Heroku oneclick / Rapid deploy method available
 * After Deploying open the webapp.
 
 #### Step 2
+
 * Paste your Direct / Magnet URL in the url section
 
 #### Step 3 (threads per download)
+
 * Set it maximum to increase speed upto 12 threads
 
 #### Step 4 (config in url)
+
 * Generate rclone.conf file from any terminal or cmd or termux 
 * You can use Multiple cloud drive accounts in single rclone.conf file
 * We need any text/code hosting website, Use [gist-github](https://gist.github.com) github account needed.
@@ -42,12 +47,14 @@ Heroku oneclick / Rapid deploy method available
 ** note : Don't share this url to anyone
 
 #### Step 5 (Cloudname)
+
 * Cloudname is the name that you assigned to your cloud
 * You can find it in rclone.conf file ,it must be between [ ]
 ![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)
 * Please type CLOUDNAME without brackets in heroku webapp
 
 #### Step 6 (Upload)
+
 * Click on upload button to start download and upload 
 
 # Features 
@@ -60,7 +67,7 @@ Heroku oneclick / Rapid deploy method available
  * Safe and secure
  * Downloads High seeded torrents.
 
-# Known issues
+# Known issues 
  * Torrent File upload not available
  * magnet / torrent may not upload automatically
  * magnet links stucks at seeding after downloaded.
@@ -69,7 +76,7 @@ Heroku oneclick / Rapid deploy method available
 
 ###### Use [seedr.cc](https://seedr.cc) to upload torrents if number of seeds is low/low speed, and upload directlink to Aria2Rclone.
 
-# screenshots
+# screenshots 
 ![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506-153704.jpg)
 ![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181154.jpg)
 ![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181606.jpg)
