@@ -16,7 +16,7 @@
     "####### Please don't delete above line ########\n",
     "# support me star my repo\n",
     "# Image Widget\n",
-    "file = open(\"Aria2Mega.jpg\", \"rb\")\n",
+    "file = open(\"Aria2Rclone.jpg\", \"rb\")\n",
     "image = file.read()\n",
     "image_headline = widgets.Image(\n",
     "                    value=image,\n",
