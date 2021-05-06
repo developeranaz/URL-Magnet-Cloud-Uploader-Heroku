@@ -17,8 +17,7 @@ Heroku oneclick / Rapid deploy method available
 # How To Use ?
 * Create a Heroku Free account
 * Log in to Heroku in any browser
-* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
-
+* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
 
 # Features 
  * Multi threat download upto x12
