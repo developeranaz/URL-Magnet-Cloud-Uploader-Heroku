@@ -22,7 +22,7 @@ RUN apt update -y  && \
 COPY Essential-Files /Essential-Files
 COPY Essential-Files/index.html /usr/index.html
 COPY Essential-Files/favicon.ico /voila/files/favicon.ico
-#RUN cp '/Essential-Files/jconf.py' '/conf/jupyter.py'
-#RUN cp '/Essential-Files/jpass.json' '/root/.jupyter/jupyter_notebook_config.json'
+RUN cp '/Essential-Files/jconf.py' '/conf/jconf.py'
+RUN cp '/Essential-Files/jpass.json' '/root/jpass.json'
 RUN chmod +x /Essential-Files/entrypoint.sh
 CMD /Essential-Files/entrypoint.sh
