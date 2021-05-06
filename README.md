@@ -22,7 +22,7 @@ Heroku oneclick / Rapid deploy method available
  * No such upload limit
  * No heroku Bans like Aria2ng-heroku.
  * Safe and secure
- * Foldered torrents downloads only available
+ * Torrent downloads available
 # Known issues
  * Failed downloads 
  * magnet / torrent may not upload automatically
