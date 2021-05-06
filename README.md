@@ -54,12 +54,14 @@ Heroku oneclick / Rapid deploy method available
  * No such upload limit
  * No heroku Bans like Aria2ng-heroku.
  * Safe and secure
- * Torrent downloads available
+ * Downloads High seeded torrents.
 # Known issues
- * Failed downloads 
+ * Torrent File upload not available
  * magnet / torrent may not upload automatically
- * magnet links stucks at seeding after downloaded
- * 1 user per 1 download at a time
+ * magnet links stucks at seeding after downloaded.
+ * For Personal use only ie., 1 user per 1 download at a time.
+ * Low seeded Torrents may take long time,It affects free dyno.
+###### Use [SEEDR](https://seedr.cc) to upload torrents if nummber of seeds is low, and upload directlink to Aria2Rclone
 # screenshots
 ![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506-153704.jpg)
 ![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_181154.jpg)
