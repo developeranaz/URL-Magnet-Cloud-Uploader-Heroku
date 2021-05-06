@@ -29,7 +29,7 @@ Heroku oneclick / Rapid deploy method available
  * magnet links stucks at seeding after downloaded
  * 1 user per 1 download at a time
 # screenshots
-![demo](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_010431.jpg)
+![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506-153704.jpg)
 ![demo0](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_005030.jpg)
 ![demo1](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_010117_com.brave.browser.jpg)
 
