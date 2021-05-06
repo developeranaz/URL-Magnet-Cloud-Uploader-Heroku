@@ -1,16 +1,44 @@
-# Aria2-Rclone-uploader
+# URL-TO-RCLONE-HEROKU-ARIA2
+
+ Still under development
+
+Aria2c download url & magnet upload remotely to rclone Clouds.
+upload files remotely from url
+Help me fixing readme.md 
+
+Heroku oneclick / Rapid deploy method available
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
+
+###### Star my Repository & Support me
+
+## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
+
+# Features 
+ * Multi threat download upto x12
+ * Upload & Download at Maximum Speed
+ * Premitive Classic web design
+ * Darkmod Enabled
+ * No such upload limit
+ * No heroku Bans like Aria2ng-heroku.
+ * Safe and secure
+ * Foldered torrents downloads only available
+# Known issues
+ * Failed downloads 
+ * magnet / torrent may not upload automatically
+ * magnet links stucks at seeding after downloaded
+ * 1 user per 1 download at a time
+# screenshots
+![demo](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_010431.jpg)
+![demo0](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_005030.jpg)
+![demo1](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/example-imgs/Screenshot_20210506_010117_com.brave.browser.jpg)
+
+This repo is under development
+
+# What's New
+* Improved UI
+* Torrent supports but no auto uploads
+
+##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
 
 
-Upload any files to any cloud remotely using heroku
-Work not yet started .....
-
-work may be similar to 
-
-
-![g](https://raw.githubusercontent.com/developeranaz/URL-TO-MEGA-HEROKU/main/Demo-example-images-1/Screenshot_20210430_195431.jpg)
-
-Aria 2 Rclone Clouds
-
-code cleaning locally
-
-Rclone Fusemode / Public Url method 
