@@ -14,18 +14,20 @@ Heroku oneclick / Rapid deploy method available
 
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
-# How To Use ?
-### Step 1
+## How To Use ?
+#### Step 1
 * Create a Heroku Free account
 * Log in to Heroku in any browser
 * Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
 * Deploy the webapp it will take almost 5min.
 * After Deploying open the webapp.
 
-### Step 2
+#### Step 2
 
 * Paste your Direct / Magnet URL in the url section
-### Step 3 (config in url)
+#### Step 3 (threads per download)
+* Set it maximum to increase speed upto 12 threads
+#### Step 4 (config in url)
 * Generate rclone.conf file from any terminal or cmd or termux 
 * You can use Multiple cloud drive accounts in single rclone.conf file
 * We need any text hosting website Use [gist-github](https://gist.github.com) github account neded.
@@ -34,10 +36,12 @@ Heroku oneclick / Rapid deploy method available
 * Then Click RAW button and copy the url
 * Paste the Url in the heroku webapp 'config in Url' Section
 
-### Step 4 (Cloudname)
+#### Step 5 (Cloudname)
 * Cloudname is the name that you assigned to your cloud
 * You can find it in rclone.conf file ,it must be between []
-### Step 5
+
+#### Step 6 (Upload)
+* Click on upload button to start download and upload 
 
 # Features 
  * Multi threat download upto x12
