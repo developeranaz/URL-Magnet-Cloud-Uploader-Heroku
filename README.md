@@ -38,8 +38,8 @@ Heroku oneclick / Rapid deploy method available
 ** note : Don't share this url to anyone
 #### Step 5 (Cloudname)
 * Cloudname is the name that you assigned to your cloud
-* You can find it in rclone.conf file ,it must be between []
-[![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)]
+* You can find it in rclone.conf file ,it must be between [ ]
+![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)
 * Please type CLOUDNAME without brackets in heroku webapp
 #### Step 6 (Upload)
 * Click on upload button to start download and upload 
