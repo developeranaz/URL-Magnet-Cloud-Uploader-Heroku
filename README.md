@@ -25,9 +25,19 @@ Heroku oneclick / Rapid deploy method available
 ### Step 2
 
 * Paste your Direct / Magnet URL in the url section
-### Step 3
-* Generate rclone.conf file from any terminal or cmd or termux
-* We need any text hosting website Use [gist-github](https://gist.github.com)
+### Step 3 (config in url)
+* Generate rclone.conf file from any terminal or cmd or termux 
+* You can use Multiple cloud drive accounts in single rclone.conf file
+* We need any text hosting website Use [gist-github](https://gist.github.com) github account neded.
+* Open rclone.config file using any text editors and copy all text inside rclone.conf and paste it in gist
+* Choose any file name and save it.
+* Then Click RAW button and copy the url
+* Paste the Url in the heroku webapp 'config in Url' Section
+
+### Step 4 (Cloudname)
+* Cloudname is the name that you assigned to your cloud
+* You can find it in rclone.conf file ,it must be between []
+### Step 5
 
 # Features 
  * Multi threat download upto x12
