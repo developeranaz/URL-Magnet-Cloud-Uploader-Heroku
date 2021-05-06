@@ -14,6 +14,12 @@ Heroku oneclick / Rapid deploy method available
 
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
+# How To Use ?
+* Create a Heroku Free account
+* Log in to Heroku in any browser
+* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
+
+
 # Features 
  * Multi threat download upto x12
  * Upload & Download at Maximum Speed
