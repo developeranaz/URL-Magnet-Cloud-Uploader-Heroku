@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aria2Rclone</title><script
+    src="/voila/static/require.min.js"
+    integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA="
+    crossorigin="anonymous">
+  </script>
+  <!-- voila log js -->
+  <script>
+    const _debug = console.debug;
+    const _info = console.info;
+    const _warn = console.warn;
+    const _error = console.error;
+
+    function post(level, args) {
+      try {
+        window.top.postMessage({ level: "debug", msg: ["[Voilà]:", ...args] });
+      } catch(err) {
+        window.top.postMessage({ level: "debug", msg: ["[Voilà]:",
+                                                       "Issue cloning object when posting log message, JSON stringify version is:",
+                                                       JSON.stringify(args)
+                                                       ] });
+      }
+    }
+    console.debug = (...args) => {
+        post({ level: "debug", msg: ["[Voilà]:", ...args] });
+        _debug(...args);
+    };
+
+    console.info = console.info = (...args) => {
+        post({ level: "info", msg: ["[Voilà]:", ...args] });
+        _info(...args);
+    };
+
+    console.warn = (...args) => {
+        post({ level: "warn", msg: ["[Voilà]:", ...args] });
+        _warn(...args);
+    };
+
+    console.error = (...args) => {
+        post({ level: "error", msg: ["[Voilà]:", ...args] });
+        _error(...args);
+    };
+  </script>
+
+
+
+
+
+
+<style type="text/css">
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: var(--jp-cell-editor-active-background) }
+.highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
+.highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
+.highlight .err { color: var(--jp-mirror-editor-error-color) } /* Error */
+.highlight .k { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword */
+.highlight .o { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator */
+.highlight .p { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation */
+.highlight .ch { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Preproc */
+.highlight .cpf { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Single */
+.highlight .cs { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Special */
+.highlight .kc { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Type */
+.highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
+.highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
+.highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
+.highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
+.highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
+.highlight .mh { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Hex */
+.highlight .mi { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer */
+.highlight .mo { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Oct */
+.highlight .sa { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Affix */
+.highlight .sb { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Backtick */
+.highlight .sc { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Char */
+.highlight .dl { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Delimiter */
+.highlight .sd { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Doc */
+.highlight .s2 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Double */
+.highlight .se { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Escape */
+.highlight .sh { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Heredoc */
+.highlight .si { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Interpol */
+.highlight .sx { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Other */
+.highlight .sr { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Regex */
+.highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
+.highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
+.highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+  </style>
+
+
+
+<link rel="stylesheet" type="text/css" href="/voila/templates/lab/static/index.css?v=2827ebc65132659d74588ecf0ee5d64a033e16085a03856500f5c872ae6486ec7717ea269a3774e64eebf3c146d3c5de866ca702ce39b2a8d3b3b66e55ef4b47">
+
+    <link rel="stylesheet" type="text/css" href="/voila/templates/lab/static/theme-light.css?v=e40c7f8eff6bb3f0d741a1ed9faadde8ec1680faedd8c2ee1e135711a2ddbd5a3a3260109743179f8f09e6107747b266fb4f2ec0f6442b20cb68501922278914">
+
+<style type="text/css">
+a.anchor-link {
+   display: none;
+}
+.highlight  {
+    margin: 0.4em;
+}
+
+/* Input area styling */
+.jp-InputArea {
+    overflow: hidden;
+}
+
+.jp-InputArea-editor {
+    overflow: hidden;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+}
+</style>
+
+
+
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@^5/css/all.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@^5/css/v4-shims.min.css" type="text/css" />
+
+
+  <!-- voila spinner -->
+  <style>
+    #loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 75vh;
+        color: var(--jp-content-font-color1);
+        font-family: sans-serif;
+    }
+
+    .spinner {
+      animation: rotation 2s infinite linear;
+      transform-origin: 50% 50%;
+    }
+
+    .spinner-container {
+      width: 10%;
+    }
+
+    @keyframes rotation {
+      from {transform: rotate(0deg);}
+      to   {transform: rotate(359deg);}
+    }
+
+    .voila-spinner-color1{
+      fill:#268380;
+    }
+
+    .voila-spinner-color2{
+      fill:#f8e14b;
+    }
+  </style>
+
+  <style>
+    /*Hide empty cells*/
+    .jp-mod-noOutputs.jp-mod-noInput {
+      display: none;
+    }
+  </style></head>
+<body class="jp-Notebook theme-light" data-base-url="/voila/">
+
+
+  <div id="loading">
+    <div class="spinner-container">
+      <svg class="spinner" data-name="c1" version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title>voila</dc:title></cc:Work></rdf:RDF></metadata><title>spin</title><path class="voila-spinner-color1" d="m250 405c-85.47 0-155-69.53-155-155s69.53-155 155-155 155 69.53 155 155-69.53 155-155 155zm0-275.5a120.5 120.5 0 1 0 120.5 120.5 120.6 120.6 0 0 0-120.5-120.5z"/><path class="voila-spinner-color2" d="m250 405c-85.47 0-155-69.53-155-155a17.26 17.26 0 1 1 34.51 0 120.6 120.6 0 0 0 120.5 120.5 17.26 17.26 0 1 1 0 34.51z"/></svg>
+    </div>
+    <h2 id="loading_text">Running ...</h2>
+  </div>
+
+<script>
+var voila_process = function(cell_index, cell_count) {
+  var el = document.getElementById("loading_text")
+  el.innerHTML = `Executing ${cell_index} of ${cell_count}`
+}
+var voila_heartbeat = function() {
+  console.log('Ok, voila is still executing...')
+}
+</script>
+<div id="rendered_cells" style="display: none"><script id="jupyter-config-data" type="application/json">
+    {
+        "baseUrl": "/",
+        "kernelId": "8a6c9efe-4dee-4649-9ee9-2a8933b206c5"
+    }
+    </script>
+    
+    <script>
+        voila_process(1, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(2, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(3, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(4, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(5, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(6, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(7, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(8, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(9, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(10, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(11, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(12, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+
+
+
+<div id="dfecf09b-bdc0-4b2e-afdd-4cbd4dbd90ba" class="jupyter-widgets jp-OutputArea-output ">
+<script type="text/javascript">
+var element = document.getElementById('dfecf09b-bdc0-4b2e-afdd-4cbd4dbd90ba');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "6de1c330b1f04efb91968fe22e9f691f"}
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><script>
+        voila_process(13, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div></div>
+<script type="text/javascript">
+  (function() {
+    // remove the loading element
+    var el = document.getElementById("loading")
+    el.parentNode.removeChild(el)
+    // show the cell output
+    el = document.getElementById("rendered_cells")
+    el.style.display = 'unset'
+  })();
+</script>
+<script>
+  requirejs.config({ baseUrl: '/voila/', waitSeconds: 30});
+  window.voila_js_url = "/voila/templates/lab/static/voila.js?v=71f4d4c8cb842740eb7d318f4514d363eb3fb79755535ccc9aea4ddba30cd7b30d9793b2f168bb6ec366ba8b0b1b17a8a94fb48871ff9e7f3a305acf997d9531";
+  requirejs(["/voila/templates/lab/static/main.js?v=bee1f6a179b3aae9e706f72b6afdc596d73215ad09b56bf79494205e1fa3f9e58ac45d21e0fdad7fa8f02cd96c5369b28efd6db188070bbbce8993c859b02a3a"]);
+
+  // Loading classic notebook extensions.
+  
+</script>
+
+</body>
+
+
+
+</html>
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aria2Rclone</title><script
+    src="/voila/static/require.min.js"
+    integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA="
+    crossorigin="anonymous">
+  </script>
+  <!-- voila log js -->
+  <script>
+    const _debug = console.debug;
+    const _info = console.info;
+    const _warn = console.warn;
+    const _error = console.error;
+
+    function post(level, args) {
+      try {
+        window.top.postMessage({ level: "debug", msg: ["[Voilà]:", ...args] });
+      } catch(err) {
+        window.top.postMessage({ level: "debug", msg: ["[Voilà]:",
+                                                       "Issue cloning object when posting log message, JSON stringify version is:",
+                                                       JSON.stringify(args)
+                                                       ] });
+      }
+    }
+    console.debug = (...args) => {
+        post({ level: "debug", msg: ["[Voilà]:", ...args] });
+        _debug(...args);
+    };
+
+    console.info = console.info = (...args) => {
+        post({ level: "info", msg: ["[Voilà]:", ...args] });
+        _info(...args);
+    };
+
+    console.warn = (...args) => {
+        post({ level: "warn", msg: ["[Voilà]:", ...args] });
+        _warn(...args);
+    };
+
+    console.error = (...args) => {
+        post({ level: "error", msg: ["[Voilà]:", ...args] });
+        _error(...args);
+    };
+  </script>
+
+
+
+
+
+
+<style type="text/css">
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: var(--jp-cell-editor-active-background) }
+.highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
+.highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
+.highlight .err { color: var(--jp-mirror-editor-error-color) } /* Error */
+.highlight .k { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword */
+.highlight .o { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator */
+.highlight .p { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation */
+.highlight .ch { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Preproc */
+.highlight .cpf { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Single */
+.highlight .cs { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Special */
+.highlight .kc { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Type */
+.highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
+.highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
+.highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
+.highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
+.highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
+.highlight .mh { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Hex */
+.highlight .mi { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer */
+.highlight .mo { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Oct */
+.highlight .sa { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Affix */
+.highlight .sb { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Backtick */
+.highlight .sc { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Char */
+.highlight .dl { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Delimiter */
+.highlight .sd { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Doc */
+.highlight .s2 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Double */
+.highlight .se { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Escape */
+.highlight .sh { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Heredoc */
+.highlight .si { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Interpol */
+.highlight .sx { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Other */
+.highlight .sr { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Regex */
+.highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
+.highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
+.highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+  </style>
+
+
+
+<link rel="stylesheet" type="text/css" href="/voila/templates/lab/static/index.css?v=2827ebc65132659d74588ecf0ee5d64a033e16085a03856500f5c872ae6486ec7717ea269a3774e64eebf3c146d3c5de866ca702ce39b2a8d3b3b66e55ef4b47">
+
+    <link rel="stylesheet" type="text/css" href="/voila/templates/lab/static/theme-light.css?v=e40c7f8eff6bb3f0d741a1ed9faadde8ec1680faedd8c2ee1e135711a2ddbd5a3a3260109743179f8f09e6107747b266fb4f2ec0f6442b20cb68501922278914">
+
+<style type="text/css">
+a.anchor-link {
+   display: none;
+}
+.highlight  {
+    margin: 0.4em;
+}
+
+/* Input area styling */
+.jp-InputArea {
+    overflow: hidden;
+}
+
+.jp-InputArea-editor {
+    overflow: hidden;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+}
+</style>
+
+
+
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@^5/css/all.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@^5/css/v4-shims.min.css" type="text/css" />
+
+
+  <!-- voila spinner -->
+  <style>
+    #loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 75vh;
+        color: var(--jp-content-font-color1);
+        font-family: sans-serif;
+    }
+
+    .spinner {
+      animation: rotation 2s infinite linear;
+      transform-origin: 50% 50%;
+    }
+
+    .spinner-container {
+      width: 10%;
+    }
+
+    @keyframes rotation {
+      from {transform: rotate(0deg);}
+      to   {transform: rotate(359deg);}
+    }
+
+    .voila-spinner-color1{
+      fill:#268380;
+    }
+
+    .voila-spinner-color2{
+      fill:#f8e14b;
+    }
+  </style>
+
+  <style>
+    /*Hide empty cells*/
+    .jp-mod-noOutputs.jp-mod-noInput {
+      display: none;
+    }
+  </style></head>
+<body class="jp-Notebook theme-light" data-base-url="/voila/">
+
+
+  <div id="loading">
+    <div class="spinner-container">
+      <svg class="spinner" data-name="c1" version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title>voila</dc:title></cc:Work></rdf:RDF></metadata><title>spin</title><path class="voila-spinner-color1" d="m250 405c-85.47 0-155-69.53-155-155s69.53-155 155-155 155 69.53 155 155-69.53 155-155 155zm0-275.5a120.5 120.5 0 1 0 120.5 120.5 120.6 120.6 0 0 0-120.5-120.5z"/><path class="voila-spinner-color2" d="m250 405c-85.47 0-155-69.53-155-155a17.26 17.26 0 1 1 34.51 0 120.6 120.6 0 0 0 120.5 120.5 17.26 17.26 0 1 1 0 34.51z"/></svg>
+    </div>
+    <h2 id="loading_text">Running ...</h2>
+  </div>
+
+<script>
+var voila_process = function(cell_index, cell_count) {
+  var el = document.getElementById("loading_text")
+  el.innerHTML = `Executing ${cell_index} of ${cell_count}`
+}
+var voila_heartbeat = function() {
+  console.log('Ok, voila is still executing...')
+}
+</script>
+<div id="rendered_cells" style="display: none"><script id="jupyter-config-data" type="application/json">
+    {
+        "baseUrl": "/",
+        "kernelId": "8a6c9efe-4dee-4649-9ee9-2a8933b206c5"
+    }
+    </script>
+    
+    <script>
+        voila_process(1, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(2, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(3, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(4, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(5, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(6, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(7, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(8, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(9, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(10, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(11, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div><script>
+        voila_process(12, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+
+
+
+<div id="dfecf09b-bdc0-4b2e-afdd-4cbd4dbd90ba" class="jupyter-widgets jp-OutputArea-output ">
+<script type="text/javascript">
+var element = document.getElementById('dfecf09b-bdc0-4b2e-afdd-4cbd4dbd90ba');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "6de1c330b1f04efb91968fe22e9f691f"}
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><script>
+        voila_process(13, 13)
+      </script>
+        <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+
+</div></div>
+<script type="text/javascript">
+  (function() {
+    // remove the loading element
+    var el = document.getElementById("loading")
+    el.parentNode.removeChild(el)
+    // show the cell output
+    el = document.getElementById("rendered_cells")
+    el.style.display = 'unset'
+  })();
+</script>
+<script>
+  requirejs.config({ baseUrl: '/voila/', waitSeconds: 30});
+  window.voila_js_url = "/voila/templates/lab/static/voila.js?v=71f4d4c8cb842740eb7d318f4514d363eb3fb79755535ccc9aea4ddba30cd7b30d9793b2f168bb6ec366ba8b0b1b17a8a94fb48871ff9e7f3a305acf997d9531";
+  requirejs(["/voila/templates/lab/static/main.js?v=bee1f6a179b3aae9e706f72b6afdc596d73215ad09b56bf79494205e1fa3f9e58ac45d21e0fdad7fa8f02cd96c5369b28efd6db188070bbbce8993c859b02a3a"]);
+
+  // Loading classic notebook extensions.
+  
+</script>
+
+</body>
+
+
+
+</html>
