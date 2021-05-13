@@ -1,8 +1,8 @@
 # URL-TO-RCLONE-HEROKU-ARIA2
-# Don't fork updating repository **
+
 ![Aria2Rclone](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/1620300999496.jpg)
 
- Still under development
+ Still under development Please Report issues to improve this repo.I will try to fix bugs in next update.
 
 Aria2c download url & magnet upload remotely to rclone Clouds.
 upload files remotely from url
@@ -17,39 +17,28 @@ Heroku oneclick / Rapid deploy method available
 
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
-## How To Use ?
+## How To Deploy ?
 #### Step 1
-* Create a Heroku Free account
+* Create a [Heroku](https://dashboard.heroku.com/login) Free account
 * Log in to Heroku in any browser
 * Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
-* Deploy the webapp it will take almost 5min.
-* After Deploying open the webapp.
+#### Step 2 (CONFIG_FILE_IN_URL)
 
-#### Step 2
-
-* Paste your Direct / Magnet URL in the url section
-#### Step 3 (threads per download)
-* Set it maximum to increase speed upto 12 threads
-#### Step 4 (config in url)
-* Generate rclone.conf file from any terminal or cmd or termux 
+* Generate rclone.conf file from any terminal or cmd or termux .
 * You can use Multiple cloud drive accounts in single rclone.conf file
 * We need any text/code hosting website, Use [gist-github](https://gist.github.com) github account needed.
 * Open rclone.config file using any text editors and copy all text inside rclone.conf and paste it in gist
 * Choose any file name and save it.
 * Then Click RAW button and copy the url
-* Paste the Url in the heroku webapp 'config in Url' Section
+* Paste your config Url in the heroku 'CONFIG_FILE_IN_URL' Section
+
 ** note : Don't share this url to anyone
-#### Step 5 (Cloudname)
-* Cloudname is the name that you assigned to your cloud
-* You can find it in rclone.conf file ,it must be between [ ]
-![CLOUDNAME](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210506_165138.jpg)
-* Please type CLOUDNAME without brackets in heroku webapp
-#### Step 6 (Upload)
-* Click on upload button to start download and upload 
+
 
 # Features 
  * Multi threat download upto x12
  * Upload & Download at Maximum Speed
+ * Simultanious uploads to different remotes.
  * Premitive Classic web design
  * Darkmod Enabled
  * No such upload limit
@@ -60,7 +49,6 @@ Heroku oneclick / Rapid deploy method available
  * Torrent File upload not available
  * magnet / torrent may not upload automatically
  * magnet links stucks at seeding after downloaded.
- * For Personal use only ie., 1 user per 1 download at a time.
  * Low seeded Torrents may take long time,It affects free dyno.
 ###### Use [seedr.cc](https://seedr.cc) to upload torrents if number of seeds is low/low speed, and upload directlink to Aria2Rclone.
 # screenshots
@@ -72,9 +60,12 @@ Heroku oneclick / Rapid deploy method available
 This repo is under development
 
 # What's New
+* rclone.conf removed from webpage and fused to heroku
+* No cloudname field .It just finds your cloudnames and adds selector widget.
+* Simultanious upload support available
 * Improved UI
 * Torrent supports but no auto uploads
 
-##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
 
+##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
 
