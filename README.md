@@ -1,6 +1,6 @@
 # URL-TO-RCLONE-HEROKU-ARIA2
 
-![Aria2Rclone](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/1620300999496.jpg)
+![Aria2Rclone](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/162030099946.jpg)
 
  Still under development Please Report issues to improve this repo.I will try to fix bugs in next update.
 
