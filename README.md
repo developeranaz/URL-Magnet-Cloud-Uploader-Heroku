@@ -4,11 +4,13 @@
 
  Still under development Please Report issues to improve this repo.I will try to fix bugs in next update.
 
+
 Aria2c download url & magnet upload remotely to rclone Clouds.
 upload files remotely from url
 
 Help me fixing readme.md 
 
+## This repo still need Bugfix Follow me V1.10 stable coming soon..
 Heroku oneclick / Rapid deploy method available
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
@@ -69,6 +71,10 @@ This repo is under development
 * Improved UI
 * Torrent supports but no auto uploads
 
+## Follow me V1.10 stable coming soon..
+# Upcoming Updates
+* Torrent Full support - Torrent auto upload.
+* Seperating torrent & Direct Url with selector button
 
 ##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
 
