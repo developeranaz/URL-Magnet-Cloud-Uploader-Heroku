@@ -35,6 +35,8 @@ Heroku oneclick / Rapid deploy method available
 * Paste your config Url in the heroku 'CONFIG_FILE_IN_URL' Section
 
 ** note : Don't share this url to anyone
+* IMPORTANT : Don't Use Chrome (Android) browser it will fails to load aria2rclone website, stucks at blackscreen 
+### FOR Android users use BRAVE/Firefox instead of chrome
 
 
 # Features 
