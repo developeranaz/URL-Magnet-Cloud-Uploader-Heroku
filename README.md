@@ -70,7 +70,8 @@ This repo is under development
 * Simultanious upload support available
 * Improved UI
 * Torrent supports but no auto uploads
-
+# NOTICE FOR TORRENT
+* FOR TORRENT UPLOADS USE (BETA VERSION)[https://github.com/developeranaz/Aria2-Rclone-URL-Uploader-HEROKU-Beta]  Beta may be unstable and please don't use copyrighted/illegal torrents
 ## Follow me V1.10 stable coming soon..
 # Upcoming Updates
 * Torrent Full support - Torrent auto upload.
