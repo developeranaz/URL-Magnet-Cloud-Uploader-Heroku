@@ -39,4 +39,4 @@
     "#)\n",
     "\n",
     "cloudname = widgets.Dropdown(\n",
-    "    options=['selectone',\n",
+    "    options=['selectone',\n",d
