@@ -1,5 +1,4 @@
-FROM kalilinux/kali-rolling
-EXPOSE 8080
+FROM ubuntu:latest
 RUN apt update -y  && \
     apt install curl -y  && \
     apt install unrar -y  && \
@@ -12,21 +11,11 @@ RUN apt update -y  && \
     apt install aria2 -y && \
     apt install wget -y && \
     apt install pip -y && \
-    pip install jupyter && \
-    pip install voila && \
+    pip install flask -y && \
     pip install ipywidgets && \
     pip install widgetsnbextension && \
-    mkdir /Essential-Files && \
-    mkdir /voila && \
-    mkdir /voila/files
+    mkdir /Essential-Files 
 COPY Essential-Files /Essential-Files
-COPY Essential-Files/index.html /usr/index.html
-COPY Essential-Files/favicon.ico /voila/files/favicon.ico
-COPY Essential-Files/1.htpy /1.htpy
-COPY Essential-Files/2 /2
-COPY Essential-Files/entrypoint.sh /entrypoint.sh
-COPY Essential-Files/Aria2Rclone.jpg /Aria2Rclone.jpg
-#RUN cp '/Essential-Files/jconf.py' '/conf/jconf.py'
-#RUN cp '/Essential-Files/jpass.json' '/root/jpass.json'
+
 RUN chmod +x /entrypoint.sh
 CMD /entrypoint.sh
