@@ -49,7 +49,7 @@ Heroku oneclick / Rapid deploy method available
  * No heroku Bans like Aria2ng-heroku.
  * Safe and secure
  * Downloads High seeded torrents.
- * For Torrent download use beta  [![Deploy](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/heroku.svg)](https://dashboard.heroku.com/new?template=https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-URL-Uploader-HEROKU-Beta) and this beta may be unstable with some new bugs 
+ * For Torrent download use beta  [![Deploy](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/heroku.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-URL-Uploader-HEROKU-Beta) and this beta may be unstable with some new bugs 
 
 # Known issues
  * Torrent File upload not available
