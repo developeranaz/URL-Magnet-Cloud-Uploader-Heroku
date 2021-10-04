@@ -8,14 +8,11 @@
 Aria2c download url & magnet upload remotely to rclone Clouds.
 upload files remotely from url
 
-Help me fixing readme.md 
-
-## This repo still need Bugfix Follow me V1.10 stable coming soon..
 Heroku oneclick / Rapid deploy method available
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
 
-###### Star my Repository & Support me
+Star my Repository & Support me
 
 ## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
 
@@ -40,6 +37,7 @@ Heroku oneclick / Rapid deploy method available
 
 
 # Features 
+ * Torrent uploads fixed 
  * Multi threat download upto x12
  * Upload & Download at Maximum Speed
  * Simultanious uploads to different remotes.
@@ -49,13 +47,8 @@ Heroku oneclick / Rapid deploy method available
  * No heroku Bans like Aria2ng-heroku.
  * Safe and secure
  * Downloads High seeded torrents.
- * For Torrent uploads use beta  [![Deploy](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/heroku.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-URL-Uploader-HEROKU-Beta) and this beta may be unstable with some new bugs 
 
-# Known issues
- * Torrent File upload not available
- * magnet / torrent may not upload automatically
- * magnet links stucks at seeding after downloaded.
- * Low seeded Torrents may take long time,It affects free dyno.
+
 ###### Use [seedr.cc](https://seedr.cc) to upload torrents if number of seeds is low/low speed, and upload directlink to Aria2Rclone.
 # screenshots
 ![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210513-105725.png)
@@ -75,7 +68,7 @@ This repo is under development
 * Improved UI
 * Torrent supports but no auto uploads
 # NOTICE FOR TORRENT
-* FOR TORRENT UPLOADS USE [BETA-VERSION](https://github.com/developeranaz/Aria2-Rclone-URL-Uploader-HEROKU-Beta) Beta may be unstable and please don't use copyrighted/illegal torrents
+* please don't use copyrighted/illegal torrents
 ## Follow me V1.10 stable coming soon..
 # Upcoming Updates
 * Torrent Full support - Torrent auto upload.
