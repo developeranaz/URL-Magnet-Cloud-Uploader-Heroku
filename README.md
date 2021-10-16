@@ -56,7 +56,7 @@ Star my Repository & Support me
 ![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210513-105759.png)
 
 
-![demo1](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210513-105907.png)
+![demo1](https://raw.githubusercontent.com/developeranaz/URL-Magnet-Cloud-Uploader-Heroku/main/example-imgs/Screenshot%202021-10-16%20180853.png)
 
 This repo is under development
 
