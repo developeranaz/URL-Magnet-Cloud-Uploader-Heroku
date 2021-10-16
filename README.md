@@ -50,7 +50,7 @@ Star my Repository & Support me
 
 ###### Use [seedr.cc](https://seedr.cc) to upload torrents if number of seeds is low/low speed, and upload directlink to Aria2Rclone.
 # screenshots
-![demo](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210513-105725.png)
+![demo](https://raw.githubusercontent.com/developeranaz/URL-Magnet-Cloud-Uploader-Heroku/main/example-imgs/Screenshot%202021-10-16%20180051.png)
 
 
 ![demo0](https://raw.githubusercontent.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/main/example-imgs/Screenshot_20210513-105759.png)
