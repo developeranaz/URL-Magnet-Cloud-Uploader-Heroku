@@ -7,4 +7,5 @@ RUN apt install unzip -y && \
     cp /rclone-*-linux-amd64/rclone /usr/bin/ && \
     chown root:root /usr/bin/rclone && \
     chmod 755 /usr/bin/rclone 
+WORKDIR /web
 CMD /e.sh
