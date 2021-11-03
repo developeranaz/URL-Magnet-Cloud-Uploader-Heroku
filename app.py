@@ -31,4 +31,4 @@ def index():
    return render_template('download.html')
     
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.run(port=4996)
+app.run(host="0.0.0.0", port=THERANDOMPORT, debug=True)
