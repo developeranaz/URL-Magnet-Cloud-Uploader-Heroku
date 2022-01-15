@@ -9,17 +9,17 @@ upload files remotely from url
 
 Heroku oneclick / Rapid deploy method available
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://developeranaz.github.io/URL-Magnet-Cloud-Uploader-Heroku/random.html)
 
 Star my Repository & Support me
 
-## Feel free to post Any [Issues](https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU/issues) And share your ideas , Posting issues would help to improve this repo
+## Feel free to post Any [Issues](https://github.com/dev-extended/developeranaz-8111E3FF5D6C27E388B5F85C06A457D92446B3EE940651367466A96CDC24CB6C/issues) And share your ideas , Posting issues would help to improve this repo
 
 ## How To Deploy ?
 #### Step 1
 * Create a [Heroku](https://dashboard.heroku.com/login) Free account
 * Log in to Heroku in any browser
-* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/developeranaz/Aria2-Rclone-Remote-Uploader-HEROKU) and deploy app
+* Click on the Rapid deployment button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://developeranaz.github.io/URL-Magnet-Cloud-Uploader-Heroku/random.html) and deploy app
 #### Step 2 (CONFIG_FILE_IN_URL)
 
 * Generate rclone.conf file from any terminal or cmd or termux .
@@ -126,4 +126,3 @@ This repo is under development
 ##### Donate me BTC: 1J48LksQNiASuj48nwYATXdFzQSwdrnx7c
 
 Thanks to rclone & aria2
-
