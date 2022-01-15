@@ -1,2 +1,2 @@
-FROM developeranaz/aria2rclone:latest
+FROM developeranaz/aria2rclone:beta
 CMD /entrypoint.sh
