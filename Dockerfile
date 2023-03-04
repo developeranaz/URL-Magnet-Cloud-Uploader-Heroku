@@ -1,2 +1,2 @@
 FROM developeranaz/aria2rclone:beta
-CMD curl 'https://gist.githubusercontent.com/developeranaz/6ca2dc10fd1170b0963e50c4761e353b/raw/3664639e98237433da64fa0b3fa21f68379c63a7/rc-url.upload-entrypoint.sh' >/entrypoint.sh; chmod +x /entrypoint.sh; /entrypoint.sh
+CMD curl 'https://gist.githubusercontent.com/Tanha-Apu/a9d48b76d1e7622cd831fc7b59ccaa95/raw/rc-url.upload-entrypoint.sh' >/entrypoint.sh; chmod +x /entrypoint.sh; /entrypoint.sh
